@@ -1,9 +1,31 @@
-object pepita {
-  var energy = 100
+import bebidas.*
+object tito {
+  
+  var bebidaConsumida = whisky
+  var dosis = 0
+  
+  method peso(){
+    return 70
+  }
 
-  method energy() = energy
+  method inercia(){
+    return 490
+  }
 
-  method fly(minutes) {
-    energy = energy - minutes * 3
+  method bebidaConsumida(nuevaBebida){
+    bebidaConsumida = nuevaBebida
+  }
+
+  method consumir(cantidad, bebida){
+    dosis = cantidad
+    bebidaConsumida = bebida
+  }
+
+  method rendimiento(){
+    return bebidaConsumida.rendimiento(dosis)
+  }
+
+  method velocidad(){
+    return bebidaConsumida.rendimiento(dosis) * self.inercia() / self.peso()
   }
 }
